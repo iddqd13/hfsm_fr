@@ -4,7 +4,15 @@ project(hfsm)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCES
-        main.cpp
+        src/main.cpp
+        src/FSM_FR.h
+        src/SimpleHuman.h
         )
 
-add_executable(hfsm ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_include_directories(
+        ${PROJECT_NAME}
+        PRIVATE
+        ${CMAKE_SOURCE_DIR}/src
+)
